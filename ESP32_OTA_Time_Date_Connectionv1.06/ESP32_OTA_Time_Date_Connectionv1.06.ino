@@ -18,8 +18,8 @@ char* fwname = "ESP32_OTA_Time_Date_Connectionv1.06";
 char* criticalWiFi = "N";  // If Y, system reset performed after WiFi reconect fail followed by user defined timeout (criticalWiFiTimeOut) loop.
 char* criticalWiFiTimeOut = "1000";  // default 1 second
 char* screen_select = "Main_Screen";  // Call screen to display on base unit
-const char* ssid = "sec01";
-const char* password = "2018wiskeylima!";
+const char* ssid = "SSID";
+const char* password = "PASSWORD";
 int8_t getRSSI;
 int count = 0;
 int dwncount = 0;
@@ -86,7 +86,7 @@ void setup() {
 
   Start_SSD1306_Setup();
   StartWiFi();
-  WiFi.softAP("ESP_C&C", "alphaalpha");
+  WiFi.softAP("ESP_C&C", "AP_PASSWORD");
   Start_Time_Services();
   Setup_Interrupts_and_Initialise_Clock();       // Now setup a timer interrupt to occur every 1-second, to keep seconds accurate
   server.begin();
